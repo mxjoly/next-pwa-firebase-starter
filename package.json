@@ -1,0 +1,66 @@
+{
+  "name": "next-firebase-starter-kit",
+  "version": "1.0.0",
+  "description": "Express server side rendering Next.js application on Firebase Cloud Functions with Firebase Hosting",
+  "author": "Maxime Joly",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mxjoly/next-pwa-firebase-starter"
+  },
+  "keywords": [],
+  "engines": {
+    "node": "8"
+  },
+  "scripts": {
+    "dev": "cross-env CONFIG_ENV=local PORT=3000 ts-node src/app/dev",
+    "preserve": "cross-env CONFIG_ENV=development npm run build-all && npm run copy-deps && npm run install-deps",
+    "serve": "cross-env NODE_ENV=production firebase serve",
+    "predeploy": "cross-env CONFIG_ENV=development npm run build-all && npm run copy-deps",
+    "deploy": "firebase use dev && cross-env NODE_ENV=production firebase deploy",
+    "clean": "rimraf dist/* && rimraf src/app/.next",
+    "analyse": "cross-env ANALYSE=1 next build src/app",
+    "build-all": "npm run build-public && npm run build-functions && npm run build-server && npm run build-app",
+    "build-public": "mkdirp dist && ncp src/public dist/public",
+    "build-functions": "tsc --project src/functions/tsconfig.json",
+    "build-server": "mkdirp dist/functions/public && ncp src/app/public dist/functions/public && tsc src/app/server.ts --outDir dist/functions --esModuleInterop --skipLibCheck",
+    "build-app": "next build src/app && ncp src/app/.next dist/functions/.next",
+    "copy-deps": "ncp package.json dist/functions/package.json",
+    "install-deps": "cd dist/functions && npm i"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.9.7",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.46",
+    "@types/node": "^13.11.0",
+    "@types/react": "^16.9.32",
+    "@types/react-dom": "^16.9.6",
+    "autoprefixer": "^9.7.6",
+    "clean-css": "^4.2.3",
+    "compression": "^1.7.4",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "firebase": "^7.12.0",
+    "firebase-admin": "^8.10.0",
+    "firebase-functions": "^3.5.0",
+    "next": "^9.3.2",
+    "next-pwa": "^2.3.1",
+    "postcss": "^7.0.27",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "cross-env": "^7.0.2",
+    "firebase-tools": "^8.0.2",
+    "mkdirp": "^1.0.3",
+    "ncp": "^2.0.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.8.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-bundle-analyzer": "^3.6.1"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "defaultLocale": "en",
+  "allLocales": ["en", "fr"],
+  "defaultNamespaces": "common",
+  "namespaces": ["common"],
+  "localeSelector": "locale",
+  "pageKeys": {
+    "/": "home",
+    "/resetpassword": "reset_password"
+  }
+}

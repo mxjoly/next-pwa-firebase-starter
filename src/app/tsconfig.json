@@ -1,0 +1,33 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "noEmit": true,
+    "baseUrl": "./",
+    "paths": {
+      "~/*": [
+        "./*"
+      ],
+      "@helpers/*": [
+        "./helpers/*"
+      ],
+      "@utils/*": [
+        "./utils/*"
+      ]
+    },
+    "resolveJsonModule": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
+}
