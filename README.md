@@ -51,19 +51,19 @@ npm run deploy-<dev|stag|prod>
 
 ## Configuration
 
-_Firebase configuration_ :
+- **Firebase configuration** :
 
-- Log in to your firebase account with the command `node_modules/.bin/firebase login`.
-- Update the file `.firebaserc` with your own firebase projects id. You can get them using `node_modules/.bin/firebase projects:list`.
-- Add your Firebase project configurations in `/src/app/utils/firebase.js`.
+  - Log in to your firebase account with the command `node_modules/.bin/firebase login`.
+  - Update the file `.firebaserc` with your own firebase projects id. You can get them using `node_modules/.bin/firebase projects:list`.
+  - Add your Firebase project configurations in `/src/app/utils/firebase.js`.
 
-  _Common configurations_ (`/src/app`) :
+- **Common configurations** (`/src/app`) :
 
-- You can configure somes in the folder `utils` : the common config of the application in `config.js`, the material-ui themes in the folder `theme`.
-- To configure the localization, update `locales.json`. The locale path folder is at `utils/locales/`.
+  - You can configure somes in the folder `utils` : the common config of the application in `config.js`, the material-ui themes in the folder `theme`.
+  - To configure the localization, update `locales.json`. The locale path folder is at `utils/locales/`.
 
-  _Internationalization_ (`/src/app`):
+- **Internationalization** (`/src/app`):
 
-- The locale is implemented manually in the style of [react-i18next](https://react.i18next.com/). The locales can be configured with `locales.json`.
-- The locale folder is located in `utils/locales/`.
-- We attribute for each page a key to identify it in the locale resources. This keys are specified in `locales.json`.
+  - The locale is implemented manually in the style of [react-i18next](https://react.i18next.com/). The locales can be configured with `locales.json`.
+  - The locale folder is located in `utils/locales/`.
+  - We attribute for each page a key to identify it in the locale resources. This keys are specified in `locales.json`.
