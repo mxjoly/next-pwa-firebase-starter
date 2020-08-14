@@ -19,7 +19,7 @@ interface ConfigMap {
 // ------------------------------------------------------------ //
 
 const defaultConfigs = {
-  APP_NAME: 'Blipee',
+  APP_NAME: 'Next Application',
   ASSETS_PATH: '/static/assets',
 };
 

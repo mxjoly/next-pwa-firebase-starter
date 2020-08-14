@@ -8,7 +8,7 @@ import { getInitialLocale } from '@helpers/translation';
 /**
  * We don't need error page, so we redirect the user to the home page
  */
-export default () => {
+const Error = () => {
   const router = useRouter();
   useEffect(() => {
     const { query } = router;
@@ -16,11 +16,13 @@ export default () => {
       router.replace(`/?${localeSelector}=${getInitialLocale()}`);
     } else {
       router.replace('/');
-    }  
+    }
   });
   return (
     <Head>
-      <meta name='robots' content='noindex, nofollow' />
+      <meta name="robots" content="noindex, nofollow" />
     </Head>
   );
 };
+
+export default Error;

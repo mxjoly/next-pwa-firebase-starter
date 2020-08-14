@@ -14,20 +14,19 @@ import useTranslation from '@helpers/hooks/useTranslation';
 function getPageKeyInLocales(pathname: string) {
   try {
     let key = pageKeys[pathname];
-    if (key === undefined)
-      throw new Error();
+    if (key === undefined) throw new Error();
     return key;
-  } catch(err) {
+  } catch (err) {
     console.error(`No key was found for the pathname : ${pathname}`);
-  };
-};
+  }
+}
 
 /**
  * Wrap a page to add the document head data
  * @param WrappedPage - A next page
  * @param types - A tab that contains the types of tag we'll use
  */
-export default (WrappedPage: NextPage<any>, types: HeadTagType[] = []) => {
+const Hoc = (WrappedPage: NextPage<any>, types: HeadTagType[] = []) => {
   const WithHead: NextPage<any> = ({ pageProps }) => {
     const { t, locale } = useTranslation();
     const { pathname } = useRouter();
@@ -48,17 +47,19 @@ export default (WrappedPage: NextPage<any>, types: HeadTagType[] = []) => {
         </Head>
         <WrappedPage {...pageProps} />
       </>
-    )
+    );
   };
 
-  WithHead.getInitialProps = async ctx => {
+  WithHead.getInitialProps = async (ctx) => {
     // retrieve initial props of the wrapped component
     let pageProps = {};
     if (WrappedPage.getInitialProps) {
-      pageProps = await WrappedPage.getInitialProps(ctx)
+      pageProps = await WrappedPage.getInitialProps(ctx);
     }
     return { pageProps };
-  }
+  };
 
   return WithHead;
 };
+
+export default Hoc;
