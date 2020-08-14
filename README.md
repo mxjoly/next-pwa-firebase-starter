@@ -13,16 +13,16 @@ This is a starter project implementing a server side rendering Next.js progressi
 
 ## Features
 
-- Server side rendering application
-- Internationalization
-- Progressive web app
-- High Lighthouse scores
-- Cache control
-- SEO optimized
-- Twitter Cards meta
-- OpenGraph structured data
-- Uses the popular, well-maintained Material UI React component library
-- Styles optimized (postcss, clean-css)
+- 🚀 Server side rendering application
+- 🏳‍🌈 Internationalization
+- 🚀 Progressive web app
+- 💯 High Lighthouse scores
+- ✅ Cache control
+- 🚀 SEO optimized
+- ✅ Twitter Cards meta
+- ✅ OpenGraph structured data
+- 📦 Uses the popular, well-maintained Material UI React component library
+- 🚀 Styles optimized (postcss, clean-css)
 
 ## Quick Start
 
