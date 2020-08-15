@@ -53,5 +53,4 @@ const configs: ConfigMap = {
   },
 };
 
-// @ts-ignore
 export default configs[__CONFIG__];
