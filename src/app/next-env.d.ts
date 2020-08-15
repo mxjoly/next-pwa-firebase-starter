@@ -15,4 +15,4 @@ declare global {
   }
 }
 
-declare const __CONFIG__: any;
+declare const __CONFIG__: 'local' | 'development' | 'staging' | 'production';
